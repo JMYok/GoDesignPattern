@@ -5,8 +5,8 @@ type Phone struct {
 	lightningEarPhone LightningEarPhone
 }
 
-func (p *Phone) SetLightningEarphone(earPhone LightningEarPhone) {
-	p.lightningEarPhone = earPhone
+func SetLightningEarphone(earPhone LightningEarPhone) *Phone {
+	return &Phone{earPhone}
 }
 
 func (p *Phone) OutputSound() {
