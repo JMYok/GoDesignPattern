@@ -5,6 +5,8 @@ import (
 	"sync"
 )
 
+// 处理资源访问冲突
+
 type Logger struct {
 	file *os.File
 }
