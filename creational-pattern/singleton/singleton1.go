@@ -1,4 +1,4 @@
-package main
+package singleton
 
 import (
 	"os"
@@ -29,9 +29,4 @@ func GetLogger() *Logger {
 
 func (l *Logger) Log(message string) {
 	l.file.WriteString(message + "\n")
-}
-
-func main() {
-	logger := GetLogger()
-	logger.Log("This is a test log message.")
 }
