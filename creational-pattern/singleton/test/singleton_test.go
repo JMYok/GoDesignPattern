@@ -1,6 +1,7 @@
 package test
 
 import (
+	"fmt"
 	"jmy/go-design-pattern/creational-pattern/singleton"
 	"sync"
 	"testing"
@@ -8,7 +9,15 @@ import (
 
 func Test1(t *testing.T) {
 	logger := singleton.GetLogger()
-	logger.Log("This is a test log message.")
+	var wg sync.WaitGroup
+	wg.Add(10)
+	for i := 0; i < 10; i++ {
+		go func(i int) {
+			logger.Log(fmt.Sprintf("This is number %d test log message.", i))
+			wg.Done()
+		}(i)
+	}
+	wg.Wait()
 }
 
 func Test2(t *testing.T) {

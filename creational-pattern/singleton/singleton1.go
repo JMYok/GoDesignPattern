@@ -9,6 +9,7 @@ import (
 
 type Logger struct {
 	file *os.File
+	mu   sync.Mutex
 }
 
 var (
@@ -28,5 +29,7 @@ func GetLogger() *Logger {
 }
 
 func (l *Logger) Log(message string) {
+	l.mu.Lock()
+	defer l.mu.Unlock()
 	l.file.WriteString(message + "\n")
 }
