@@ -1,4 +1,4 @@
-package adapter_pattern
+package easy
 
 //适配器作为中间桥梁
 

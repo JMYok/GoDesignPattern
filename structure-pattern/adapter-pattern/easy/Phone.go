@@ -1,4 +1,4 @@
-package adapter_pattern
+package easy
 
 // Phone 依赖Lightning接口
 type Phone struct {

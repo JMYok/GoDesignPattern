@@ -1,4 +1,4 @@
-package adapter_pattern
+package easy
 
 import "fmt"
 
